@@ -1,0 +1,13 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title"><%= category.name %></h5>
+    <div>
+      <%= link_to "Show", category, class: "btn btn-outline-primary btn-sm" %>
+      <%= link_to "Edit", edit_category_path(category), class: "btn btn-outline-secondary btn-sm" %>
+      <%= button_to "Delete", category, method: :delete,
+                    class: "btn btn-outline-danger btn-sm",
+                    form: { class: "d-inline" },
+                    data: { turbo_confirm: "Are you sure?" } %>
+    </div>
+  </div>
+</div>

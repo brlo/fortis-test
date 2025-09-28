@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between align-items-center">
+      <h2 class="card-title mb-0">Category: <%= @category.name %></h2>
+
+      <div class="btn-group">
+        <%= link_to "Edit", edit_category_path(@category), class: "btn btn-outline-primary" %>
+        <%= link_to "Back to Categories", categories_path, class: "btn btn-outline-secondary" %>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <ul>
+      <% @category.products.each do |product| %>
+        <li>
+          <div><strong><%= link_to product.name, product %></strong></div>
+          <div>$<%= number_with_precision(product.price, precision: 2) %></div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

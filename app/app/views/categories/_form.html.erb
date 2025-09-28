@@ -1,0 +1,22 @@
+<%= form_with(model: category,
+              html: {
+                class: "needs-validation",
+                novalidate: true
+              },
+              data: {
+                controller: "form",
+                action: "submit->form#submitForm"
+              }) do |form| %>
+
+  <div data-form-target="errors"></div>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit class: "btn btn-primary", data: { form_target: "submit" } %>
+    <%= link_to "Cancel", categories_path, class: "btn btn-secondary" %>
+  </div>
+<% end %>
